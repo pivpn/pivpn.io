@@ -14,8 +14,7 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
 	<body>
-
-		<!-- Header -->
+			<!-- Header -->
 			<section id="header">
 				<header>
 					<span class="image avatar"><img src="images/pivpn_logo.png" alt="" /></span>
@@ -23,14 +22,6 @@
 					<p>Secure connectivity for the masses.<br />
 					Low cost, high security.</p>
 				</header>
-				<nav id="nav">
-					<ul>
-						<li><a href="#install" class="active">Install</a></li>
-						<li><a href="#about">About</a></li>
-						<li><a href="#tech">Technical Information</a></li>
-						<li><a href="#contrib">Contribute!</a></li>
-					</ul>
-				</nav>
 				<footer>
 					<ul class="icons">
 						<li><a href="https://github.com/pivpn/pivpn" class="icon fa-github"><span class="label">Github</span></a></li>
@@ -38,446 +29,32 @@
 					</ul>
 				</footer>
 			</section>
-
-		<!-- Wrapper -->
+			<!-- Wrapper -->
 			<div id="wrapper">
-
 				<!-- Main -->
 					<div id="main">
-
 						<!-- One -->
-							<section id="install">
-								<div class="container">
-									<header class="major">
-										<h2>PiVPN</h2>
-										<p>Simplest OpenVPN setup and configuration,<br />
-										designed for Raspberry Pi.</p>
-									</header>
-                                    <ul class="feature-icons">
-                                        <li class="fa-code"><strong>::: INSTALLATION :::</strong> <br /> curl -L https://install.pivpn.io | bash</li>
-                                    </ul>
-                                    <p><b>SIMPLE ::: </b>Yes, that's it!  It is *almost* that simple. To elaborate a little more, you will want to <a href="https://www.raspberrypi.org/documentation/installation/installing-images/README.md">install Raspbian</a> on a Raspberry pi.  Strongly recommend using the latest <a href="https://www.raspberrypi.org/downloads/raspbian/">Jessie Lite</a> image but the normal Jessie image will work as well.  Preferrably enable ssh access and then begin. After install you may need to open a port on your router.<br /> There is a (now slightly outdated) guided walkthrough of the install available <a href="https://www.sitepoint.com/setting-up-a-home-vpn-using-your-raspberry-pi/">here</a>.<br />More information is also available on the <a href="https://github.com/pivpn/pivpn">PiVPN GitHub</a></p>
-                                    <p><b>FLEXIBLE ::: </b>Think if you can figure out how to do this yourself you'll have more options?  This installer is no slouch! It'll allow you to customize your VPN port, certificate details, key encryption strength, client DNS server, and more!  Even if you are an expert, the options presented within are a perfect foundation for any openvpn server installation.  Although this is geared toward running on a $35 Raspberry Pi, the installer will work just as well on an Ubuntu Server running Trusty Tahr 14.04. </p>
-                                    <p><b>MANAGEABLE ::: </b>Installation is finished, now what do you do?  No worries, we've got you covered!  Provided free of charge on your server is a new 'pivpn' command.  Simply run pivpn and you are presented with all of the available options.  Easily add client profiles (OVPN), revoke them, list the ones you created, etc.  There is also an option to completely remove everything the installer did with the 'pivpn uninstall' command.  So you can experiment with pivpn with no fear of irreversible changes to your server.</p>
-                                    <p><b>SECURE ::: </b>Even though this installer makes everything so trivial, it doesn't mean it gives you trivial security settings.  Everything has been upgraded right out of the box beyond the default settings to harden the security of the server and client.  Starting with offering you the ability to enable unattended-upgrades which will automatically patch your server with security updates.  Next the server configuration will only use the latest TLS 1.2 protocol.  Both the data and control channels use upgraded AES and SHA256 encryption and hash algorithms. Options are pre-configured to verify your server certificate to battle MITM attack vectors.  All this and more are configured out of the box by the pivpn installer.  This is a detailed level of hardening you'll have a difficult time finding elsewhere.</p>
-								</div>
+						<section id="install">
+							<div class="container">
+								<header class="major">
+									<h2>PiVPN</h2>
+									<p>Simplest OpenVPN setup and configuration,<br />
+									designed for Raspberry Pi.</p>
+								</header>
+                <ul class="feature-icons">
+                    <li class="fa-code"><strong>::: CHECK OUT OUR NEW HOME :::</strong> <br />
+										<a href=https://pivpn.dev>https://pivpn.dev</a> </li>
+                </ul>
+                    <p>
+											<b>We are moving ::: </b>Yes, that's it! PiVPN has a new and safer home.<br />
+												As some of you might know we have lost control over pivpn.io long time ago, and the website
+												was lacking some updates, and the long awaited SSL Certificate. So ... we have moved
+												to <a href=https://pivpn.dev>pivpn.dev</a>, where we now have full control over the website,
+												While still keeping it Opensourced.
+										</p>
+							</div>
 							</section>
-
-						<!-- Two -->
-							<section id="about">
-								<div class="container">
-									<h3>About</h3>
-                                <h5>Origin</h5>
-                                <p>There are quite a few various scripts that in some way install openvpn for you.  This project in particular began from the code by <a href="https://github.com/StarshipEngineer/OpenVPN-Setup">StarshipEngineer</a> to help make installing OpenVPN on a raspberry pi as simple as it can be.  This is still the striving goal today (see Why This Is Important just below). However, even with the solid foundation provided by StarshipEngineer, I had recently come across the <a href="https://pi-hole.net">Pi-Hole</a> project and saw just how easy an installation can be! So I took the scripts from StarshipEngineer, the framework and functions from the pi-hole project, and merged them into what you now see as PiVPN.  I then added a ton of functionality, failsafe checks, hardened security, etc....  This should be bar none, the simplest and fastest way to setup an OpenVPN server on your raspberry pi that leaves you with an extremely secure configuration.  I've made a few additions and tweaks as well to help make managing the OpenVPN server even easier after install.  Everything can be managed by using a new 'pivpn' command on your system.  This includes adding new client certs, revoking them, and completely uninstalling the pivpn. There is a lot more that can be added and I hope the suggestions and improvements can be contributed by the community at large.</p>
-                                <h5>Why This Is Important</h5>
-                                <p>There are a few driving factors that make this very important to me and I believe the community at large.  In this post Snowden era where our privacy and security is infringed upon, not only by bad actors but potentially by those whom we thought should be protecting these very ideals, it is necessary for normal citizens to take matters into their own hands.  The trouble with this, many times, is that if you are not very technical you may not know how to begin.  I believe the EFF has helped lower a barrier of encrypted sites with their <a href="https://www.eff.org/deeplinks/2014/11/certificate-authority-encrypt-entire-web">Let's Encrypt</a> initiative.  Allowing many to now have their sites on encrypted channels.  To me, the next logical step here is also ensuring the pipe you are using is as secure as possible.  This not only could include unknown networks at airports, Starbucks, generic public hot-spots; but also your ISP.  To that end I'd like to make sure these scripts also work on a Debian Jessie image from an Amazon free tier server.  It is important that more and more people have access to protecting their traffic online.  It's clear others won't hand you this protection.  PiVPN tries to make it easier for you to grab.  Enjoy!</p>
-								</div>
-							</section>
-
-						<!-- Three -->
-							<section id="tech">
-								<div class="container">
-									<h3>Technical Information</h3>
-                                    <p>Great news! OpenVPN is undergoing a security audit. This means that at the end of the audit, this software we all rely on to help protect the security of our traffic will be in even better shape.  Here is an <a href="https://www.bleepingcomputer.com/news/security/cryptography-expert-matthew-green-to-audit-openvpn-security/">article</a> announcing the audit.<br /> In regards to PiVPN, this means that once OpenVPN 2.4 is released we will make every effort to have PiVPN use this version. This way we gain the security fixes that will come post audit. At that time we will also be able to use the better EC (elliptic curve) ciphers in creating certificates which should be more secure and also less taxing on clients. <br /><br /> For more information on PiVPN be sure to check the <a href="https://github.com/pivpn/pivpn/wiki">PiVPN Wiki</a> <br /> It could also be helpful to browse closed Issues with the <a href="https://github.com/pivpn/pivpn/issues?utf8=%E2%9C%93&q=is%3Aissue%20label%3Ainformation%20">Information</a> or <a href="https://github.com/pivpn/pivpn/issues?utf8=%E2%9C%93&q=is%3Aissue%20label%3Aquestion%20">Question</a> tag. </p>
-									<div class="features">
-                                                <h4>Blogs / Video's About PiVPN</h4>
-                                                <p>The links below showcase some good write ups and tutorials that use PiVPN. Some other decent information may also be contained regarding VPNs and security in general. If you find you have more questions on this area then read and/or watch some of the below!</p>
-<b>Articles &#47; Blogs</b>
-<ul>
-<li><a href="http://kamilslab.com/2017/01/22/how-to-turn-your-raspberry-pi-into-a-home-vpn-server-using-pivpn/">Create your own VPN server with the Raspberry Pi</a></li>
-<li><a href="http://chasingtech.net/wp/2017/01/03/pivpn-create-your-own-vpn-for-your-home-network/">PiVPN - Create your own VPN for your home network</a></li>
-<li><a href="https://blog.vigilcode.com/2016/04/pivpn-easiest-quickest-setup-of-openvpn/">PiVPN, Easiest &amp; Quickest Setup of OpenVPN</a></li>
-</ul>
-<b>Video Guides</b>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=9RSHSt4RuLk">How to Setup PiVPN on the Raspberry Pi Tutorial</a></li>
-<li><a href="https://www.youtube.com/watch?v=pUBMcsvJfe4">Raspberry Pi - OpenVPN Setup via PiVPN</a></li>
-</ul>
-</p>
-												<h4>Frequently Asked Questions</h4>
-												<p>There is a <a href="https://github.com/pivpn/pivpn/wiki/FAQ">FAQ</a> available on the Github page. Be sure to also check the <a href="https://github.com/pivpn/pivpn/issues">PiVPN Issues</a> section and especially the closed ones as your question may already be answered! </p>
-										<article>
-											<div class="inner">
-												<h4>Miscellaneous How-To's for OpenVPN Management</h4>
-                                                <h5>The 'pivpn' command</h5>
-                                                <p><pre>
-::: Control all PiVPN specific functions!
-:::
-::: Usage: pivpn &lt;command&gt; [option]
-:::
-::: Options:
-:::  -a, add [nopass]     Create a client ovpn profile, optional nopass
-:::  -c, clients          List any connected clients to the server
-:::  -d, debug            Start a debugging session if having trouble
-:::  -l, list             List all valid and revoked certificates
-:::  -r, revoke           Revoke a client ovpn profile
-:::  -h, help             Show this help dialog
-:::  -u, uninstall        Uninstall PiVPN from your system!
-                                                </pre></p>
-											</div>
-										</article>
-									</div>
-								</div>
-							</section>
-
-						<!-- Four -->
-							<section id="contrib">
-								<div class="container">
-									<h3>Contribute!</h3>
-									<p>Contributions are Welcome and Encouraged!</p>
-                                    <p>The PiVPN installation code is available on <a href="https://github.com/pivpn/pivpn">github</a>. Please be sure to check out any <a href="https://github.com/pivpn/pivpn/issues">issues</a> especially with the 'help wanted' label.</p>
-								</div>
-							</section>
-
-						<!-- Five -->
-						<!--
-							<section id="five">
-								<div class="container">
-									<h3>Elements</h3>
-
-									<section>
-										<h4>Text</h4>
-										<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-										This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-										This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-										<hr />
-										<header>
-											<h4>Heading with a Subtitle</h4>
-											<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-										</header>
-										<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-										<header>
-											<h5>Heading with a Subtitle</h5>
-											<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-										</header>
-										<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-										<hr />
-										<h2>Heading Level 2</h2>
-										<h3>Heading Level 3</h3>
-										<h4>Heading Level 4</h4>
-										<h5>Heading Level 5</h5>
-										<h6>Heading Level 6</h6>
-										<hr />
-										<h5>Blockquote</h5>
-										<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-										<h5>Preformatted</h5>
-										<pre><code>i = 0;
-
-	while (!deck.isInOrder()) {
-	    print 'Iteration ' + i;
-	    deck.shuffle();
-	    i++;
-	}
-
-	print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-									</section>
-
-									<section>
-										<h4>Lists</h4>
-										<div class="row">
-											<div class="6u 12u(xsmall)">
-												<h5>Unordered</h5>
-												<ul>
-													<li>Dolor pulvinar etiam magna etiam.</li>
-													<li>Sagittis adipiscing lorem eleifend.</li>
-													<li>Felis enim feugiat dolore viverra.</li>
-												</ul>
-												<h5>Alternate</h5>
-												<ul class="alt">
-													<li>Dolor pulvinar etiam magna etiam.</li>
-													<li>Sagittis adipiscing lorem eleifend.</li>
-													<li>Felis enim feugiat dolore viverra.</li>
-												</ul>
-											</div>
-											<div class="6u 12u(xsmall)">
-												<h5>Ordered</h5>
-												<ol>
-													<li>Dolor pulvinar etiam magna etiam.</li>
-													<li>Etiam vel felis at lorem sed viverra.</li>
-													<li>Felis enim feugiat dolore viverra.</li>
-													<li>Dolor pulvinar etiam magna etiam.</li>
-													<li>Etiam vel felis at lorem sed viverra.</li>
-													<li>Felis enim feugiat dolore viverra.</li>
-												</ol>
-												<h5>Icons</h5>
-												<ul class="icons">
-													<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-													<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-													<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-													<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
-													<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-													<li><a href="#" class="icon fa-tumblr"><span class="label">Tumblr</span></a></li>
-												</ul>
-											</div>
-										</div>
-										<h5>Actions</h5>
-										<ul class="actions">
-											<li><a href="#" class="button special">Default</a></li>
-											<li><a href="#" class="button">Default</a></li>
-											<li><a href="#" class="button alt">Default</a></li>
-										</ul>
-										<ul class="actions small">
-											<li><a href="#" class="button special small">Small</a></li>
-											<li><a href="#" class="button small">Small</a></li>
-											<li><a href="#" class="button alt small">Small</a></li>
-										</ul>
-										<div class="row">
-											<div class="3u 6u(medium) 12u$(xsmall)">
-												<ul class="actions vertical">
-													<li><a href="#" class="button special">Default</a></li>
-													<li><a href="#" class="button">Default</a></li>
-													<li><a href="#" class="button alt">Default</a></li>
-												</ul>
-											</div>
-											<div class="3u 6u$(medium) 12u$(xsmall)">
-												<ul class="actions vertical small">
-													<li><a href="#" class="button special small">Small</a></li>
-													<li><a href="#" class="button small">Small</a></li>
-													<li><a href="#" class="button alt small">Small</a></li>
-												</ul>
-											</div>
-											<div class="3u 6u(medium) 12u$(xsmall)">
-												<ul class="actions vertical">
-													<li><a href="#" class="button special fit">Default</a></li>
-													<li><a href="#" class="button fit">Default</a></li>
-													<li><a href="#" class="button alt fit">Default</a></li>
-												</ul>
-											</div>
-											<div class="3u 6u$(medium) 12u$(xsmall)">
-												<ul class="actions vertical small">
-													<li><a href="#" class="button special small fit">Small</a></li>
-													<li><a href="#" class="button small fit">Small</a></li>
-													<li><a href="#" class="button alt small fit">Small</a></li>
-												</ul>
-											</div>
-										</div>
-									</section>
-
-									<section>
-										<h4>Table</h4>
-										<h5>Default</h5>
-										<div class="table-wrapper">
-											<table>
-												<thead>
-													<tr>
-														<th>Name</th>
-														<th>Description</th>
-														<th>Price</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>Item One</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Two</td>
-														<td>Vis ac commodo adipiscing arcu aliquet.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Three</td>
-														<td> Morbi faucibus arcu accumsan lorem.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Four</td>
-														<td>Vitae integer tempus condimentum.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Five</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-												</tbody>
-												<tfoot>
-													<tr>
-														<td colspan="2"></td>
-														<td>100.00</td>
-													</tr>
-												</tfoot>
-											</table>
-										</div>
-
-										<h5>Alternate</h5>
-										<div class="table-wrapper">
-											<table class="alt">
-												<thead>
-													<tr>
-														<th>Name</th>
-														<th>Description</th>
-														<th>Price</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>Item One</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Two</td>
-														<td>Vis ac commodo adipiscing arcu aliquet.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Three</td>
-														<td> Morbi faucibus arcu accumsan lorem.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Four</td>
-														<td>Vitae integer tempus condimentum.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Five</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-												</tbody>
-												<tfoot>
-													<tr>
-														<td colspan="2"></td>
-														<td>100.00</td>
-													</tr>
-												</tfoot>
-											</table>
-										</div>
-									</section>
-
-									<section>
-										<h4>Buttons</h4>
-										<ul class="actions">
-											<li><a href="#" class="button special">Special</a></li>
-											<li><a href="#" class="button">Default</a></li>
-											<li><a href="#" class="button alt">Alternate</a></li>
-										</ul>
-										<ul class="actions">
-											<li><a href="#" class="button special big">Big</a></li>
-											<li><a href="#" class="button">Default</a></li>
-											<li><a href="#" class="button alt small">Small</a></li>
-										</ul>
-										<ul class="actions fit">
-											<li><a href="#" class="button special fit">Fit</a></li>
-											<li><a href="#" class="button fit">Fit</a></li>
-											<li><a href="#" class="button alt fit">Fit</a></li>
-										</ul>
-										<ul class="actions fit small">
-											<li><a href="#" class="button special fit small">Fit + Small</a></li>
-											<li><a href="#" class="button fit small">Fit + Small</a></li>
-											<li><a href="#" class="button alt fit small">Fit + Small</a></li>
-										</ul>
-										<ul class="actions">
-											<li><a href="#" class="button special icon fa-download">Icon</a></li>
-											<li><a href="#" class="button icon fa-download">Icon</a></li>
-											<li><a href="#" class="button alt icon fa-check">Icon</a></li>
-										</ul>
-										<ul class="actions">
-											<li><span class="button special disabled">Special</span></li>
-											<li><span class="button disabled">Default</span></li>
-											<li><span class="button alt disabled">Alternate</span></li>
-										</ul>
-									</section>
-
-									<section>
-										<h4>Form</h4>
-										<form method="post" action="#">
-											<div class="row uniform">
-												<div class="6u 12u(xsmall)">
-													<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
-												</div>
-												<div class="6u 12u(xsmall)">
-													<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
-												</div>
-											</div>
-											<div class="row uniform">
-												<div class="12u">
-													<div class="select-wrapper">
-														<select name="demo-category" id="demo-category">
-															<option value="">- Category -</option>
-															<option value="1">Manufacturing</option>
-															<option value="1">Shipping</option>
-															<option value="1">Administration</option>
-															<option value="1">Human Resources</option>
-														</select>
-													</div>
-												</div>
-											</div>
-											<div class="row uniform">
-												<div class="4u 12u(medium)">
-													<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-													<label for="demo-priority-low">Low Priority</label>
-												</div>
-												<div class="4u 12u(medium)">
-													<input type="radio" id="demo-priority-normal" name="demo-priority">
-													<label for="demo-priority-normal">Normal Priority</label>
-												</div>
-												<div class="4u 12u(medium)">
-													<input type="radio" id="demo-priority-high" name="demo-priority">
-													<label for="demo-priority-high">High Priority</label>
-												</div>
-											</div>
-											<div class="row uniform">
-												<div class="6u 12u(medium)">
-													<input type="checkbox" id="demo-copy" name="demo-copy">
-													<label for="demo-copy">Email me a copy of this message</label>
-												</div>
-												<div class="6u 12u(medium)">
-													<input type="checkbox" id="demo-human" name="demo-human" checked>
-													<label for="demo-human">I am a human and not a robot</label>
-												</div>
-											</div>
-											<div class="row uniform">
-												<div class="12u">
-													<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-												</div>
-											</div>
-											<div class="row uniform">
-												<div class="12u">
-													<ul class="actions">
-														<li><input type="submit" value="Send Message" /></li>
-														<li><input type="reset" value="Reset" class="alt" /></li>
-													</ul>
-												</div>
-											</div>
-										</form>
-									</section>
-
-									<section>
-										<h4>Image</h4>
-										<h5>Fit</h5>
-										<span class="image fit"><img src="images/banner.jpg" alt="" /></span>
-										<div class="box alt">
-											<div class="row 50% uniform">
-												<div class="4u"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-												<div class="4u"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-												<div class="4u"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-											</div>
-											<div class="row 50% uniform">
-												<div class="4u"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-												<div class="4u"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-												<div class="4u"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-											</div>
-											<div class="row 50% uniform">
-												<div class="4u"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-												<div class="4u"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-												<div class="4u"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-											</div>
-										</div>
-										<h5>Left &amp; Right</h5>
-										<p><span class="image left"><img src="images/pivpn_logo.png" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-										<p><span class="image right"><img src="images/pivpn_logo.png" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-									</section>
-
-								</div>
-							</section>
-						-->
-
 					</div>
-
 				<!-- Footer -->
 					<section id="footer">
 						<div class="container">
@@ -486,8 +63,8 @@
 							</ul>
 						</div>
 					</section>
-
 			</div>
+
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>

@@ -1,5 +1,5 @@
 @import url("font-awesome.min.css");
-@import url("http://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic|Source+Code+Pro:400");
+@import url("https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic|Source+Code+Pro:400");
 
 /*
 	Read Only by HTML5 UP
@@ -2586,6 +2586,10 @@
 /* Footer */
 
 	#footer {
+		z-index: -1;
+		position: fixed;
+		bottom: 0;
+		width: 100%;
 		background: #fafafa;
 		border-top: 0;
 		color: #c0c0c0;
