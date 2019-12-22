@@ -1588,6 +1588,7 @@
 
 	p {
 		margin: 0 0 2.25em 0;
+		text-align: justify;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -2079,7 +2080,7 @@
 				padding: 0.35em 0 0 3.5em;
 				position: relative;
 				vertical-align: top;
-				width: 48%;
+				width: 100%;
 			}
 
 				ul.feature-icons li:before {
@@ -2586,15 +2587,11 @@
 /* Footer */
 
 	#footer {
-		z-index: -1;
-		position: fixed;
-		bottom: 0;
-		width: 100%;
 		background: #fafafa;
 		border-top: 0;
 		color: #c0c0c0;
 		overflow: hidden;
-		padding: 2em 0 0 0;
+		padding: 4em 0 2em 0;
 	}
 
 		#footer .copyright {
@@ -2605,7 +2602,7 @@
 
 			#footer .copyright li {
 				border-left: solid 1px #d4d4d4;
-#				display: inline-block;
+				display: inline-block;
 				font-size: 0.8em;
 				margin-left: 1em;
 				padding-left: 1em;

@@ -14,66 +14,320 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
 	<body>
-			<!-- Header -->
+
+		<!-- Header -->
 			<section id="header">
 				<header>
 					<span class="image avatar"><img src="images/pivpn_logo.png" alt="" /></span>
 					<h1 id="logo"><a href="#">The PiVPN Project</a></h1>
-					<p>Secure connectivity for the masses.<br />
-					Low cost, high security.</p>
+					<p>
+						Secure connectivity for the masses.<br />
+						Low cost, high security.
+					</p>
 				</header>
+				<nav id="nav">
+					<ul>
+						<li><a href="#install" class="active">Install</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#tech">Technical Information</a></li>
+						<li><a href="#contrib">Contribute!</a></li>
+					</ul>
+				</nav>
 				<footer>
 					<ul class="icons">
-						<li><a href="https://github.com/pivpn/pivpn" class="icon fa-github"><span class="label">Github</span></a></li>
-						<li><a href="https://github.com/pivpn/pivpn/issues" class="icon fa-envelope"><span class="label">Email</span></a></li>
+						<li>
+							<a href="https://github.com/pivpn/pivpn" class="icon fa-github">
+								<span class="label">Github</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.reddit.com/r/pivpn/" class="icon fa-reddit">
+								<span class="label">Reddit</span>
+							</a>
+						</li>
 					</ul>
 				</footer>
 			</section>
-			<!-- Wrapper -->
-			<div id="wrapper">
-				<!-- Main -->
-					<div id="main">
-						<!-- One -->
-						<section id="install">
-							<div class="container">
-								<header class="major">
-									<h2>PiVPN</h2>
-									<p>Simplest OpenVPN setup and configuration,<br />
-									designed for Raspberry Pi.</p>
-								</header>
-                <ul class="feature-icons">
-                    <li class="fa-code"><strong>::: CHECK OUT OUR NEW HOME :::</strong> <br />
-										<a href=https://pivpn.dev>https://pivpn.dev</a> </li>
-                </ul>
-                    <p>
-											<b>We are moving ::: </b>Yes, that's it! PiVPN has a new and safer home.<br />
-												As some of you might know we have lost control over pivpn.io long time ago, and the website
-												was lacking some updates, and the long awaited SSL Certificate. So ... we have moved
-												to <a href=https://pivpn.dev>pivpn.dev</a>, where we now have full control over the website,
-												While still keeping it Opensourced.
-										</p>
-							</div>
-							</section>
+		<!-- Wrapper -->
+		<div id="wrapper">
+			<!-- Main -->
+			<div id="main">
+				<!-- One -->
+				<section id="install">
+					<div class="container">
+						<header class="major">
+							<h2>PiVPN</h2>
+							<p>
+								Simplest OpenVPN setup and configuration,<br />
+								designed for Raspberry Pi.
+							</p>
+						</header>
+            <ul class="feature-icons">
+            	<li class="fa-code">
+								<strong>::: INSTALLATION :::</strong>
+								<br />
+								<code>curl -L https://install.pivpn.dev | bash</code>
+								<br/><br />
+								<strong>::: Test (unstable) Branch :::</strong>
+								<br />
+								<code>curl -L https://test.pivpn.dev | TESTING= bash</code>
+								</li>
+            </ul>
+            <p>
+							<b>SIMPLE ::: </b>Yes, that's it!  It is *almost* that simple.<br />
+							To elaborate a little more, you will want to
+							<a href="https://www.raspberrypi.org/documentation/installation/installing-images/README.md">install Raspbian</a>
+							on a Raspberry pi, we strongly recommend using the latest
+							<a href="https://www.raspberrypi.org/downloads/raspbian/">Raspbian Lite</a>
+							image but the normal Raspbian image will work as well,
+							preferably enable ssh access and then begin.<br />
+							After install, you may need to open a port on your router.<br/>
+							There is a (now slightly outdated) guided walkthrough of the install available
+							<a href="https://www.sitepoint.com/setting-up-a-home-vpn-using-your-raspberry-pi/">here</a>.<br/>
+							More information is also available on the <a href="https://github.com/pivpn/pivpn">PiVPN GitHub</a>
+						</p>
+            <p>
+							<b>FLEXIBLE ::: </b>
+							Think if you can figure out how to do this yourself you'll have
+							more options?
+							<br />
+							This installer is no slouch! It'll allow you to customize your
+							VPN port, key encryption strength, client DNS server, and more!
+							Even if you are an expert, the options presented within are a
+							perfect foundation for any openvpn server installation.
+							Although this is geared toward running on a $35 Raspberry Pi,
+							the installer will work just as well on an Ubuntu or Debian server.
+						</p>
+            <p>
+							<b>MANAGEABLE ::: </b>
+							Installation is finished, now what do you do? No worries,
+							we've got you covered!
+							<br />
+							Provided free of charge on your server is a new 'pivpn' command.
+							Simply run pivpn and you are presented with all of the available options.
+							Easily add client profiles (OVPN), revoke them, list the ones you created, etc.
+							There is also an option to completely remove everything
+							the installer did with the 'pivpn uninstall' command.
+							So you can experiment with pivpn with no fear of irreversible
+							changes to your server.
+						</p>
+            <p>
+						<b>SECURE ::: </b>
+						Even though this installer makes everything so trivial,
+						it doesn't mean it gives you trivial security settings.
+						<br />
+						Everything has been upgraded right out of the box beyond the default
+						settings to harden the security of the server and client.
+						Starting with offering you the ability to enable unattended-upgrades
+						which will automatically patch your server with security updates.
+						Next, the server configuration will only use the latest TLS protocol.
+						Both the data and control channels use upgraded AES and SHA256 encryption and hash algorithms.
+						Options are pre-configured to verify your server certificate to battle MITM attack vectors.
+						All this and more are configured out of the box by the pivpn installer.
+						This is a detailed level of hardening you'll have a difficult time finding elsewhere.
+						</p>
 					</div>
-				<!-- Footer -->
-					<section id="footer">
-						<div class="container">
-							<ul class="copyright">
-								<li>&copy; The PiVPN Project. All rights reserved.</li>
+				</section>
+				<!-- Two -->
+				<section id="about">
+					<div class="container">
+						<h3>About</h3>
+            <h5>Origin</h5>
+            <p>
+							There are quite a few various scripts that in some way install openvpn for you.
+							This project, in particular, was started by 0-kaladin and began
+							from the code by <a href="https://github.com/StarshipEngineer/OpenVPN-Setup">StarshipEngineer</a>
+							to help to install OpenVPN on a raspberry pi as simple as it can be.
+							This is still the striving goal today (see Why This Is Important just below) however,
+							even with the solid foundation provided by StarshipEngineer,
+							0-kaladin came across the <a href="https://pi-hole.net">Pi-Hole</a>
+							project and saw just how easy the installation can be! He took the
+							scripts from StarshipEngineer, the framework, and functions from
+							the pi-hole project, and merged them into what you now see as PiVPN.
+							Then added a ton of functionality, failsafe checks, hardened security, etc...
+							<br />
+							Currently, community-maintained this should be bar none, the simplest
+							and fastest way to set up an OpenVPN server on your raspberry pi
+							that leaves you with an extremely secure configuration.
+							<br />
+							We've made a few additions and tweaks as well to help make managing
+							the OpenVPN server even easier after install.
+							<br />
+							Everything can be managed by using a new 'pivpn' command on your system,
+							this includes adding new client certs, revoking them,
+							and completely uninstalling the pivpn.
+							<br />
+							There is a lot more that can be added and we hope the suggestions
+							and improvements can be contributed by the community at large.
+						</p>
+            <h5>Why This Is Important</h5>
+          	<p>
+							There are a few driving factors that make this very important to us,
+							and we believe, the community at large. In this post-Snowden era
+							where our privacy and security are infringed upon,
+							not only by bad actors but potentially by those whom we thought
+							should be protecting these very ideals, normal citizens must take
+							matters into their own hands. The trouble with this, many times,
+							is that if you are not very technical you may not know how to begin.
+							I believe the EFF has helped lower a barrier of encrypted sites with their
+							<a href="https://www.eff.org/deeplinks/2014/11/certificate-authority-encrypt-entire-web">
+								Let's Encrypt
+							</a>
+							initiative.
+							Allowing many to now have their sites on encrypted channels.
+							To us, the next logical step here is also ensuring the pipe you are
+							using is as secure as possible. This not only could include unknown
+							networks at airports, Starbucks, generic public hot-spots;
+							but also your ISP. To that end, We'd like to make sure these
+							scripts also work on a Debian image from an Amazon free tier server.
+							It is important that more and more people, have access to protecting
+							their traffic online. Its clear others won't hand you this protection.
+							PiVPN tries to make it easier for you to grab.
+							<br />
+							Enjoy!
+						</p>
+					</div>
+				</section>
+				<!-- Three -->
+				<section id="tech">
+					<div class="container">
+						<h3>Technical Information & Features</h3>
+            <ul>
+							<li>Supports OpenVPN 2.4</li>
+							<li>Support for WireGuard under development ( currently on test branch)</li>
+							<li>Elliptic curve encryption keys up to 512 bit</li>
+							<li>Bitwardn Support</li>
+							<li>iOS keychain support</li>
+							<li>Supports multiple DNS providers</li>
+							<li>Supports Custom DNS Servers</li>
+							<li>Custom Search Domains</li>
+							<li>Runs with PiHole</li>
+							<li>Doesn't need to be a raspberry pi, It runs on any Debian VPS Server</li>
+						</ul>
+						For more information on PiVPN be sure to check the
+						<a href="https://github.com/pivpn/pivpn/wiki">PiVPN Wiki</a>
+						<br />
+						It could also be helpful to browse closed Issues with the
+						<a href="https://github.com/pivpn/pivpn/issues?utf8=%E2%9C%93&q=is%3Aissue%20label%3Ainformation%20">
+							Information
+						</a>
+						or
+						<a href="https://github.com/pivpn/pivpn/issues?utf8=%E2%9C%93&q=is%3Aissue%20label%3Aquestion%20">
+							Question
+						</a>
+						tag.
+						<br />
+						<br />
+						<div class="features">
+            	<h4>Blogs / Video's About PiVPN</h4>
+          		<p>
+								The links below showcase some good write-ups and tutorials that use PiVPN.
+								Some other decent information may also be contained regarding VPNs and security in general.
+								If you find you have more questions on this area then read and/or watch some of them below!
+							</p>
+							<b>Articles &#47; Blogs</b>
+							<ul>
+								<li>
+									<a href="https://4s3ti.net/vpn-where-to.html">
+										Maintainer post about where to properly place a VPN
+									</a>
+								<li>
+									<a href="http://kamilslab.com/2017/01/22/how-to-turn-your-raspberry-pi-into-a-home-vpn-server-using-pivpn/">
+										Create your own VPN server with the Raspberry Pi
+									</a>
+								</li>
+								<li>
+									<a href="http://chasingtech.net/wp/2017/01/03/pivpn-create-your-own-vpn-for-your-home-network/">
+										PiVPN - Create your own VPN for your home network
+									</a>
+								</li>
+								<li>
+									<a href="https://blog.vigilcode.com/2016/04/pivpn-easiest-quickest-setup-of-openvpn/">
+										PiVPN, Easiest &amp; Quickest Setup of OpenVPN
+									</a>
+								</li>
 							</ul>
+							<b>Video Guides</b>
+							<ul>
+								<li>
+									<a href="https://www.youtube.com/watch?v=9RSHSt4RuLk">
+										How to Setup PiVPN on the Raspberry Pi Tutorial
+									</a>
+								</li>
+								<li>
+									<a href="https://www.youtube.com/watch?v=pUBMcsvJfe4">
+										Raspberry Pi - OpenVPN Setup via PiVPN
+									</a>
+								</li>
+							</ul>
+								<h4>FAQs & Support</h4>
+								<p>
+									There are
+									<a href="https://github.com/pivpn/pivpn/wiki/FAQ">FAQs</a>
+									and a <a href="https://github.com/pivpn/pivpn/wiki">Wiki</a>
+									available on the Github page.
+									<br />
+									Make sure you check the
+									<a href="https://github.com/pivpn/pivpn/issues">
+										PiVPN Issues
+									</a>
+									section and especially the closed ones as your question may
+									already be answered!
+									<br />
+									We also have our subreddit for support and discussion at
+									<a hrref="https://www.reddit.com/r/pivpn/">
+										r/PiVPN
+									</a>
+								</p>
+								</article>
 						</div>
-					</section>
+					</div>
+				</section>
+				<!-- Four -->
+				<section id="contrib">
+					<div class="container">
+						<h3>Contribute!</h3>
+						<p>
+							Contributions are Welcome and Encouraged!
+						</p>
+            <p>
+							The PiVPN installation code is available on
+							<a href="https://github.com/pivpn/pivpn">github</a>.
+							<br />
+							Plase Make sure you read the
+							<a href="https://github.com/pivpn/pivpn/blob/master/CONTRIBUTING.md">
+								Contributors Guide
+							</a>
+							<br />
+							After reading the
+							<a href="https://github.com/pivpn/pivpn/blob/master/CONTRIBUTING.md">
+								Contributors Guide
+							</a>,
+							checkout for any <a href="https://github.com/pivpn/pivpn/issues">issues</a>
+							especially with the 'help wanted' label.
+							<br />
+
+
+						</p>
+					</div>
+				</section>
 			</div>
-
-
+			<!-- Footer -->
+			<section id="footer">
+				<div class="container">
+					<ul class="copyright">
+						<li>&copy; The PiVPN Project. All rights reserved.</li>
+					</ul>
+				</div>
+			</section>
+		</div>
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollzer.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
-
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollzer.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="assets/js/main.js"></script>
 	</body>
 </html>
