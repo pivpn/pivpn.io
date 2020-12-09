@@ -1,0 +1,9 @@
+services:
+  - docker
+
+before_script:
+  - docker login -U $dockeruser -p $dockerpass
+
+script:
+  - docker build -t pivpn/pivpn.io .
+  - docker push pivpn/pivpn.io:$tag
