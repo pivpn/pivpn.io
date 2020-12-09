@@ -5,5 +5,5 @@ before_script:
   - docker login -u $dockeruser -p $dockerpass
 
 script:
-  - docker build -t pivpn/pivpn.io .
+  - docker build -t pivpn/pivpn.io:$tag .
   - docker push pivpn/pivpn.io:$tag
