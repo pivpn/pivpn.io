@@ -3,7 +3,7 @@ services:
 
 stages:
   - test
-  - name: "build&deploy"
+  - name: "Build&Publish"
     if: type = push
 
 branches:
@@ -14,11 +14,15 @@ branches:
 jobs:
   include:
     - stage: "test"
-      name: "runs tests"
+      name: "Test PR"
+      if: type = pull_request
+      before_script:
+        - docker login -u $dockeruser -p $dockerpass
       script:
-        - docker build -t pivpn/pivpn.io:$TRAVIS_COMMIT .
+        - docker build -t pivpn/pivpn.io:PR-$TRAVIS_BRANCH-$TRAVIS_COMMIT .
+        - docker push pivpn/pivpn.io:PR-$TRAVIS_BRANCH-$TRAVIS_COMMIT
 
-    - stage: "build&deploy"
+    - stage: "Build&Publish"
       name: "Build&Deploy" 
       if: type = push
       before_script:

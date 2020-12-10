@@ -1,5 +1,4 @@
-
-**[Is pivpn.io down?](https://status.pivpn.io)**
+[![Build Status](https://travis-ci.com/pivpn/pivpn.io.svg?branch=master)](https://travis-ci.com/pivpn/pivpn.io) | **[Is pivpn.io down?](https://status.pivpn.io)**
 
 ## HMTL 5 UP Readme File
 Read Only by HTML5 UP
