@@ -1,9 +1,25 @@
 services:
   - docker
 
-before_script:
-  - docker login -u $dockeruser -p $dockerpass
+stages:
+  - test
+  - name: "build&deploy"
+    if: type = push
 
-script:
-  - docker build -t pivpn/pivpn.io:$tag .
-  - docker push pivpn/pivpn.io:$tag
+
+jobs:
+  include:
+    - stage: "test"
+      name: "runs tests"
+      script:
+        - docker build -t pivpn/pivpn.io:$TRAVIS_COMMIT
+
+    - stage: "build&deploy"
+      name: "Build&Deploy" 
+      if: type = push
+      before_script:
+        - docker login -u $dockeruser -p $dockerpass
+      script:
+        - docker build -t pivpn/pivpn.io:$tag
+      after_script:
+        - docker push pivpn/pivpn.io:$tag
