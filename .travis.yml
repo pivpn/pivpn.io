@@ -21,5 +21,4 @@ jobs:
         - docker login -u $dockeruser -p $dockerpass
       script:
         - docker build -t pivpn/pivpn.io:$tag .
-      after_script:
         - docker push pivpn/pivpn.io:$tag
