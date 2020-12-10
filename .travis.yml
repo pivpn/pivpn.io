@@ -6,6 +6,10 @@ stages:
   - name: "build&deploy"
     if: type = push
 
+branches:
+  only:
+    - test
+    - master
 
 jobs:
   include:
