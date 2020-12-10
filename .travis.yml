@@ -12,7 +12,7 @@ jobs:
     - stage: "test"
       name: "runs tests"
       script:
-        - docker build -t pivpn/pivpn.io:$TRAVIS_COMMIT
+        - docker build -t pivpn/pivpn.io:$TRAVIS_COMMIT .
 
     - stage: "build&deploy"
       name: "Build&Deploy" 
@@ -20,6 +20,6 @@ jobs:
       before_script:
         - docker login -u $dockeruser -p $dockerpass
       script:
-        - docker build -t pivpn/pivpn.io:$tag
+        - docker build -t pivpn/pivpn.io:$tag .
       after_script:
         - docker push pivpn/pivpn.io:$tag
