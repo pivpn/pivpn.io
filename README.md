@@ -1,4 +1,9 @@
-[![Build Status](https://travis-ci.com/pivpn/pivpn.io.svg?branch=master)](https://travis-ci.com/pivpn/pivpn.io) | **[Is pivpn.io down?](https://status.pivpn.io)**
+[![Build Status](https://travis-ci.com/pivpn/pivpn.io.svg?branch=master)](https://travis-ci.com/pivpn/pivpn.io) | **[Is pivpn.io down?](https://stats.uptimerobot.com/8X64yTjrJO)**
+
+
+## Contributions
+
+If you want to contribute and have a PR, please make open it to the branch. 
 
 ## HMTL 5 UP Readme File
 Read Only by HTML5 UP
