@@ -2,23 +2,12 @@ services:
   - docker
 
 stages:
-  - test
   - name: "Build&Publish"
-    if: branch = master
 
 jobs:
   include:
-    - stage: "test"
-      name: "Test PR"
-      if: type = pull_request
-      before_script:
-        - echo $dockerpass | docker login -u $dockeruser  --password-stdin
-      script:
-        - docker build -t $prrepo:$TRAVIS_PULL_REQUEST .
-        - docker push $prrepo:$TRAVIS_PULL_REQUEST 
-
     - stage: "Build&Publish"
-      name: "Build&Deploy" 
+      name: "Build&Deploy"
       if: type = push
       before_script:
         - echo $dockerpass | docker login -u $dockeruser  --password-stdin
