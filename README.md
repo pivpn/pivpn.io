@@ -1,9 +1,11 @@
-[![Build Status](https://travis-ci.com/pivpn/pivpn.io.svg?branch=master)](https://travis-ci.com/pivpn/pivpn.io) | **[Is pivpn.io down?](https://stats.uptimerobot.com/8X64yTjrJO)**
+[![Build Status](https://travis-ci.com/pivpn/pivpn.io.svg?branch=master)](https://travis-ci.com/pivpn/pivpn.io)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+[![Generic badge](https://img.shields.io/badge/website-status-blue.svg)](https://stats.uptimerobot.com/8X64yTjrJO)
 
 
 ## Contributions
 
-If you want to contribute and have a PR, please make open it to the branch. 
+If you want to contribute and have a PR, please make open it to the branch.
 
 ## HMTL 5 UP Readme File
 Read Only by HTML5 UP
