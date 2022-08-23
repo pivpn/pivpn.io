@@ -29,7 +29,7 @@
 					<ul>
 						<li><a href="#install" class="active">Install</a></li>
 						<li><a href="#about">About</a></li>
-						<li><a href="#tech">Technical Information</a></li>
+						<li><a href="#tech">Features</a></li>
 						<li><a href="#contrib">Contribute!</a></li>
 						<li><a href="https://docs.pivpn.io">Documentation</a></li>
 					</ul>
@@ -60,7 +60,7 @@
 							<h2>PiVPN</h2>
 							<p>
 								The simplest way to setup and manage a VPN,<br />
-								designed for Raspberry Pi.
+								designed for Raspberry Pi&trade;.
 							</p>
 						</header>
             <ul class="feature-icons">
@@ -92,11 +92,11 @@
 							Think if you can figure out how to do this yourself you'll have
 							more options?
 							<br />
-							This installer is no slouch! It'll allow you to customize your
+							This installer is no slouch! It will allow you to customize your
 							VPN port, key encryption strength, client DNS server, and more!
 							Even if you are an expert, the options presented within are a
 							perfect foundation for any openvpn server installation.
-							Although this is geared toward running on a $35 Raspberry Pi,
+							Although this is geared toward running on a $35 Raspberry Pi&trade;,
 							the installer will work just as well on an Ubuntu or Debian server.
 						</p>
             <p>
@@ -106,7 +106,7 @@
 							<br />
 							Provided free of charge on your server is a new 'pivpn' command.
 							Simply run pivpn and you are presented with all of the available options.
-							Easily add client profiles (OVPN), revoke them, list the ones you created, etc.
+							Easily add client profiles, revoke them, list the ones you created, etc.
 							There is also an option to completely remove everything
 							the installer did with the 'pivpn uninstall' command.
 							So you can experiment with pivpn with no fear of irreversible
@@ -133,36 +133,24 @@
 				<section id="about">
 					<div class="container">
 						<h3>About</h3>
-            <h5>Origin</h5>
-            <p>
-							There are quite a few various scripts that in some way install openvpn for you.
-							This project, in particular, was started by 0-kaladin and began
-							from the code by <a href="https://github.com/StarshipEngineer/OpenVPN-Setup">StarshipEngineer</a>
-							to help to install OpenVPN on a raspberry pi as simple as it can be.
-							This is still the striving goal today (see Why This Is Important just below) however,
-							even with the solid foundation provided by StarshipEngineer,
-							0-kaladin came across the <a href="https://pi-hole.net">Pi-Hole</a>
-							project and saw just how easy the installation can be! He took the
-							scripts from StarshipEngineer, the framework, and functions from
-							the pi-hole project, and merged them into what you now see as PiVPN.
-							Then added a ton of functionality, failsafe checks, hardened security, etc...
+						<p>
+							PiVPN is a set of shell scripts developed to easily turn your Raspberry Pi&trade; into a VPN server using two free, open-source protocols:
+							<ul>
+  								<li><a href="https://www.wireguard.com/">Wireguard</a></li>
+  								<li><a href="https://openvpn.net">OpenVPN</a></li>
+							</ul>
+							This script's primary mission in life is to allow a user to have as cost-effective as possible VPN at home without being a technical wizard, hence the design of PiVPN to work on a Raspberry Pi ($35) with a one-command installer followed by easy management of the VPN with the 'pivpn' command.  
+							<br /><br />
+							That being said ...
+							<br /><br />
+							PiVPN should be, bar none, the simplest and fastest way to Install and set up an extremely secure OpenVPN or Wiregaurd server on your raspberry pi. You won't need a guide or tutorial as PiVPN will do it all for you in a fraction of the time with hardened security settings in place by default.  
 							<br />
-							Currently, community-maintained this should be bar none, the simplest
-							and fastest way to set up an OpenVPN server on your raspberry pi
-							that leaves you with an extremely secure configuration.
+							We recommend running PiVPN on the latest Raspberry Pi OS Lite image in a Raspberry Pi at your home so you can VPN into your network from not secure remote locations and safely use the internet. However, you can also use PiVPN in any Cloud Provider VPS running Ubuntu or Debian to assist those with untrustworthy ISPs. Running a VPN on a server elsewhere means you can connect to the VPN from home, and because your traffic will be getting out from the cloud/VPS provider, your ISP will only see encrypted traffic. 
 							<br />
-							We've made a few additions and tweaks as well to help make managing
-							the OpenVPN server even easier after install.
-							<br />
-							Everything can be managed by using a new 'pivpn' command on your system,
-							this includes adding new client certs, revoking them,
-							and completely uninstalling the pivpn.
-							<br />
-							There is a lot more that can be added and we hope the suggestions
-							and improvements can be contributed by the community at large.
+							PiVPN should also work with most Ubuntu and Debian based distributions, including those using UFW by default instead of raw iptables.	
 						</p>
-            <h5>Why This Is Important</h5>
-          	<p>
+            			<h5>Why This Is Important?</h5>
+          				<p>
 							There are a few driving factors that make this very important to us,
 							and we believe, the community at large. In this post-Snowden era
 							where our privacy and security are infringed upon,
@@ -172,7 +160,7 @@
 							is that if you are not very technical you may not know how to begin.
 							I believe the EFF has helped lower a barrier of encrypted sites with their
 							<a href="https://www.eff.org/deeplinks/2014/11/certificate-authority-encrypt-entire-web">
-								Let's Encrypt
+							Let's Encrypt
 							</a>
 							initiative.
 							Allowing many to now have their sites on encrypted channels.
@@ -192,8 +180,8 @@
 				<!-- Three -->
 				<section id="tech">
 					<div class="container">
-						<h3>Technical Information & Features</h3>
-            <ul>
+						<h3>Features</h3>
+            			<ul>
 							<li>Supports OpenVPN 2.4</li>
 							<li>Supports WireGuard</li>
 							<li>Elliptic curve encryption keys up to 512 bit</li>
@@ -203,17 +191,11 @@
 							<li>Supports Custom DNS Servers</li>
 							<li>Custom Search Domains (OpenVPN Only)</li>
 							<li>Runs with <a href="https://pi-hole.net">Pi-Hole&reg;</a></li>
-							<li>Doesn't need to be a raspberry pi, It runs on any Debian VPS Server</li>
+							<li>Doesn't need to be a Raspberry Pi&trade;, It runs on any x86_64 system</li>
 							<li>Supports unattended installation for automated deployments</li>
 						</ul>
 						For more information on PiVPN be sure to check the
 						<a href="https://docs.pivpn.io">PiVPN documentation</a>
-						<br />
-						It could also be helpful to browse closed Issues with the
-						<a href="https://github.com/pivpn/pivpn/issues?utf8=%E2%9C%93&q=is%3Aissue%20label%3Ainformation%20">Information</a>
-						or
-						<a href="https://github.com/pivpn/pivpn/issues?utf8=%E2%9C%93&q=is%3Aissue%20label%3Aquestion%20">Question</a> tag.
-						<br />
 						<br />
 					</div>
 				</section>
@@ -222,26 +204,10 @@
 					<div class="container">
 						<h3>Contribute!</h3>
 						<p>
-							Contributions are Welcome and Encouraged!
-						</p>
-            <p>
-							The PiVPN installation code is available on
-							<a href="https://github.com/pivpn/pivpn">github</a>.
-							<br />
-							The PiVPN documentation is also available on <a href="https://github.com/pivpn/docs">github</a>
-							<br />
-							Please make sure you read the
-							<a href="https://github.com/pivpn/pivpn/blob/master/CONTRIBUTING.md">
-								Contributors Guide
-							</a>
-							<br />
-							After reading the
-							<a href="https://github.com/pivpn/pivpn/blob/master/CONTRIBUTING.md">
-								Contributors Guide
-							</a>,
-							checkout for any <a href="https://github.com/pivpn/pivpn/issues">issues</a>
-							especially with the 'help wanted' label.
-							<br />
+							<b>You don't need to be a tech wizard to help!</b><br />
+							All kinds of contributions are <b>welcomed</b> and <b>encouraged</b>
+							please check out our <a href="https://github.com/pivpn/pivpn/tree/test#contributions">Github page</a> or <a href="https://github.com/pivpn/pivpn/tree/test#feedback--support">get in touch</a> with us to find about
+							the different ways you can help PiVPN! 
 						</p>
 					</div>
 				</section>
